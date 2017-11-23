@@ -63,6 +63,7 @@ body * {
 }
 
 .row {
+    transition: transform linear 200ms;
     box-sizing: border-box;
     margin-left: -10px;
     margin-right: -10px;
@@ -73,12 +74,14 @@ body * {
 }
 
 .one-fourth {
+    transition: transform linear 200ms;
     float: left;
     width: 25%;
     margin: 0 10px;
 }
 
 .one-third {
+    transition: transform linear 200ms;
     box-sizing: border-box;
     float: left;
     width: calc( 33.3333% - 20px);
@@ -86,17 +89,37 @@ body * {
 }
 
 .two-third {
+    transition: transform linear 200ms;
     box-sizing: border-box;
     float: left;
     width: calc( 66.6667% - 20px);
     margin: 0 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .row,
+    .cards,
+    .one-fourth,
+    .one-third,
+    .two-third {
+        display: block;
+        margin: 0;
+        float: none;
+        width: 100%;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 .card {
+    transition: transform linear 200ms;
     background: #fff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 5px 5px 0 rgba(200, 200, 200, 0.4);
+    box-sizing: border-box;
     color: #666;
     >p {
         margin-top: 5px;
@@ -246,11 +269,11 @@ users {
         }
     }
     .cal-day-cell.cal-today {
-      background: #eee;
-      border-radius: 3px;
-      .cal-day-number {
-        color: #222;
-      }
+        background: #eee;
+        border-radius: 3px;
+        .cal-day-number {
+            color: #222;
+        }
     }
     .cal-cell-top {
         min-height: 40px;
